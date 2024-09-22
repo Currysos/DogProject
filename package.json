@@ -1,0 +1,18 @@
+{
+  "name": "dogproject",
+  "version": "1.0.0",
+  "description": "A web app to show hows next in a dog tournament",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noah Hjerdin",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.13.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
