@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+body header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+body main article {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+}
+body main article h2 {
+  width: 100%;
+  text-align: center;
+}
+body main article ul {
+  width: 80%;
+  padding: 0;
+  margin: 0;
+}
+body main article ul li {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(240, 240, 240);
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(200, 200, 200);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+body main article ul li div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main article ul li div button {
+  width: 100%;
+}
+body main article ul li p {
+  padding-left: 10px;
+  padding-right: 40px;
+}
+body main article ul .unregistered {
+  background-color: rgb(255, 241, 186);
+  border-color: rgb(255, 237, 138);
+}
+body main article ul .deleted {
+  background-color: rgb(255, 186, 186);
+  border-color: rgb(255, 138, 138);
+}
+body main article ul li:first-child {
+  background-color: rgb(232, 255, 229);
+  border-color: rgb(216, 255, 215);
+}/*# sourceMappingURL=style.css.map */
