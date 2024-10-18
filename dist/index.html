@@ -18,20 +18,47 @@
             <ul id="dogs">
                 <!-- List of dogs from database -->
             </ul>
+            <form id="newDogForm">
+                <label for="handler">Förare</label>
+                <input type="text" name="handler" id="handler" value="Adam">
+
+                <label for="dogName">Hundnamn</label>
+                <input type="text" name="dogName" id="dogName" value="Eva">
+
+                <label for="race">Ras</label>
+                <input type="text" name="race" id="race" value="Fax">
+
+                <label for="size">Storlek</label>
+                <select name="size" id="size">
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <label for="class">Klass</label>
+                <input type="text" id="class" name="class" value="Agility A-1">
+                </select>
+                <button type="submit">Lägg Till</button>
+            </form>
         </article>
     </main>
     <nav>
         <div>
-            <button>Size 1</button>
-            <button>Size 2</button>
-            <button>Size 3</button>
+            <button class="sizeButtons">Size 1</button>
+            <button class="sizeButtons">Size 2</button>
+            <button class="sizeButtons">Size 3</button>
         </div>
         <div>
-            <button>Klass A</button>
-            <button>Klass B</button>
-            <button>Klass C</button>
+            <button class="classButtons">Klass A</button>
+            <button class="classButtons">Klass B</button>
+            <button class="classButtons">Klass C</button>
+            
         </div>
     </nav>
-    <footer></footer>
+    <footer>
+        <p>@Currysoft</p>
+    </footer>
 </body>
 </html>

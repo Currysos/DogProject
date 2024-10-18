@@ -51,20 +51,23 @@ onAuthStateChanged(auth, user => {
     }
 });
 
+
+
 async function writeNewDog() {
     console.log('Start adding document');
     // Databases are built up collection/doc/collection/doc...
-    const writeCollection = collection(db, 'competitions/2024-09-22/competitors');
+    const writeCollection = collection(db, 'competitions/2024-10-18/competitors');
     const docData = {
         startNR: 0,
-        name: 'Peter',
+        handler: 'Peter',
         dogName: 'Lars',
         race: 'Fax',
-        size: 'Liten',
-        class: 'Klass-A',
+        size: 'XL',
+        class: 1,
         registered: true,
         started: false,
-        deleted: false
+        deleted: false, 
+        order: 0
     };
     try {
         await addDoc(writeCollection, docData);
@@ -74,6 +77,7 @@ async function writeNewDog() {
     }
     console.log('Done adding document');
 }
+
 
 async function getAllDogs(_date) {
     console.log(`Start getting all docs from ${_date}`);
@@ -123,3 +127,38 @@ function writeDogToPage(_dog) {
 getAllDogs('2024-09-22');
 
 console.log("Today = " + getCurrentDate());
+
+const formElem = null;
+
+function _start() {
+    formElem = document.querySelector("header");
+    console.log(formElem);
+
+    formElem.addEventListener("submit", (e) => {
+        e.preventDefault();
+    
+        const formData = new FormData(formElem);
+    
+        console.log(formData.get("handler"));
+        console.log(formData.get("dogName"));
+        console.log(formData.get("race"));
+        console.log(formData.get("size"));
+        console.log(formData.get("class"));
+    });
+    
+    formElem.addEventListener("formdata", (e) => {
+        console.log("formdata fired");
+      
+        // modifies the form data
+        const formData = e.formData;
+        // formdata gets modified by the formdata event
+        formData.set("handler", formData.get("handler"));
+        formData.set("dogName", formData.get("dogName"));
+        formData.set("race", formData.get("race"));
+        formData.set("size", formData.get("size"));
+        formData.set("class", formData.get("class"));
+    
+    });
+}
+
+_start();
