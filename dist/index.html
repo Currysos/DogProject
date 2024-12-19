@@ -9,12 +9,36 @@
     <script src="bundle.js"></script>
 </head>
 <body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="compSidebar">
+        <button onclick="closeSidebar()">Close</button>
+        <a class="newComp" href="#">New Comp</a>
+        <a href="#">Comp 1</a>
+        <a href="#">Comp 2</a>
+        <a href="#">Comp 3</a>
+    </div>
+
     <header>
-        <h1>NÄSTA HUND</h1>
+        <button class="sidebarButton" onclick="openSidebar()">☰</button>
+        <h1>COMP NAME</h1>
+        <div></div>
     </header>
+
+    <script>
+        // Sidebar functions
+        function openSidebar() {
+            document.getElementById("compSidebar").style.display = "block";
+        }
+        function closeSidebar() {
+            document.getElementById("compSidebar").style.display = "none";
+        }
+    </script>
+
+    <!-- MAIN -->
     <main>
         <article>
-            <h2 id="dogsTitle">CLASS A - SIZE 1</h2>
+            <h2 id="compTitle">CLASS A - SIZE 1</h2>
             <ul id="dogs">
                 <!-- List of dogs from database -->
             </ul>
@@ -44,6 +68,8 @@
             </form>
         </article>
     </main>
+
+    <!-- BOTTOM NAVIGATION -->
     <nav>
         <div>
             <button class="sizeButtons">Size 1</button>

@@ -128,7 +128,7 @@ getAllDogs('2024-09-22');
 
 console.log("Today = " + getCurrentDate());
 
-const formElem = null;
+let formElem = null;
 
 function _start() {
     formElem = document.querySelector("header");
