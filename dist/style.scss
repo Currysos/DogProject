@@ -7,11 +7,66 @@ html {
 body {
     font-family: 'Courier New', Courier, monospace;
 
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        left: -300px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+
+        font-size: large;
+        font-weight: bold;
+
+        box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.51);
+
+        transition: 0.3s;
+
+        button {
+            display: block;
+            color: black;
+            width: 100%;
+            padding: 16px;
+            
+            border: none;
+            background-color: none;
+
+            text-decoration: none;
+            font-size: large;
+            font-weight: bold;
+
+            transition-duration: 0.2s;
+        }
+        button:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+            transition-duration: 0.2s;
+        }
+
+        a.newComp {
+            background-color: rgb(50, 204, 50);
+        }
+
+        a:hover {
+            background-color: #555;
+            color: white;
+        }
+    }
+
     header {
         width: 100%;
         height: 80px;
         display: flex;
         align-items: center;
+        justify-content: center;
 
         h1 {
             width: 86vw;
@@ -109,68 +164,51 @@ body {
                 border-color: rgb(216, 255, 215);
             }
 
-            form {}
-        }
-    }
+            #newDogButton {
+                width: 80%;
+                margin-bottom: 20px;
+                font-size: large;
+            }
 
-    .sidebar {
-        display: none;
-        margin: 0;
-        padding: 0;
-        width: 300px;
-        background-color: #f1f1f1;
-        position: fixed;
-        height: 100%;
-        overflow: auto;
+            #hideNewDogFormButton {
+                margin-bottom: 20px;
+                font-size: large;
+            }
 
-        font-size: large;
-        font-weight: bold;
+            form {
+                width: 80%;
+                display: none;
+                flex-direction: column;
+                
+                div {
+                    display: flex;
+                    margin-top: 10px;
 
-        box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.51);
+                    input {
+                        width: 100%;
+                    }
+                }
+                button {
+                    margin: 20px;
+                    font-size: large;
+                }
 
-        button {
-            display: block;
-            color: black;
-            width: 100%;
-            padding: 16px;
-            
-            border: none;
-            background-color: none;
-
-            text-decoration: none;
-            font-size: large;
-            font-weight: bold;
-
-            transition-duration: 0.2s;
-        }
-        button:hover {
-            background-color: #555;
-            color: white;
-        }
-
-        a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-            transition-duration: 0.2s;
-        }
-
-        a.newComp {
-            background-color: rgb(50, 204, 50);
-        }
-
-        a:hover {
-            background-color: #555;
-            color: white;
+                #hideNewDogFormButton {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    margin-left: 0;
+                    margin-right: 0;
+                    font-size: large;
+                }
+            }
         }
     }
 
     nav {
         width: 100%;
         height: 120px;
-        background-color: red;
-        margin-top: 20px;
+        background-color: rgb(96, 178, 255);
+        margin-top: 40px;
 
         display: flex;
         flex-direction: column;
@@ -185,7 +223,7 @@ body {
             height: auto;
 
             button.sizeButtons {
-                width: 20%;
+                width: 10%;
                 height: 25px;
             }
 

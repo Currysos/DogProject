@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,20 @@
     <link rel="stylesheet" href="style.css">
     <script src="bundle.js"></script>
 </head>
+
 <body>
 
     <!-- SIDEBAR -->
     <div class="sidebar" id="compSidebar">
-        <button onclick="closeSidebar()">Close</button>
-        <a class="newComp" href="#">New Comp</a>
-        <a href="#">Comp 1</a>
-        <a href="#">Comp 2</a>
-        <a href="#">Comp 3</a>
+        <button onclick="closeSidebar()">Stäng</button>
+        <a class="newComp" href="newComp.html">Ny Tävling</a>
     </div>
 
     <header>
         <button class="sidebarButton" onclick="openSidebar()">☰</button>
-        <h1>COMP NAME</h1>
+        <h1 id="compHeader"></h1>
         <div></div>
     </header>
-
-    <script>
-        // Sidebar functions
-        function openSidebar() {
-            document.getElementById("compSidebar").style.display = "block";
-        }
-        function closeSidebar() {
-            document.getElementById("compSidebar").style.display = "none";
-        }
-    </script>
 
     <!-- MAIN -->
     <main>
@@ -42,49 +31,78 @@
             <ul id="dogs">
                 <!-- List of dogs from database -->
             </ul>
+
+            <button onclick="showNewDogForm()" id="newDogButton">Ny Hund</button>
+
             <form id="newDogForm">
-                <label for="handler">Förare</label>
-                <input type="text" name="handler" id="handler" value="Adam">
+                <button onclick="hideNewDogForm()" id="hideNewDogFormButton">Stäng</button>
 
-                <label for="dogName">Hundnamn</label>
-                <input type="text" name="dogName" id="dogName" value="Eva">
+                <div>
+                    <label for="handler">Förare: </label>
+                    <input type="text" name="handler" id="handler" value="Adam">
+                </div>
 
-                <label for="race">Ras</label>
-                <input type="text" name="race" id="race" value="Fax">
+                <div>
+                    <label for="dogName">Hundnamn: </label>
+                    <input type="text" name="dogName" id="dogName" value="Eva">
+                </div>
 
-                <label for="size">Storlek</label>
-                <select name="size" id="size">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
+                <div>
+                    <label for="race">Ras: </label>
+                    <input type="text" name="race" id="race" value="Tax">
+                </div>
 
-                <label for="class">Klass</label>
-                <input type="text" id="class" name="class" value="Agility A-1">
-                </select>
+                <div>
+                    <label for="size">Storlek: </label>
+                    <select name="size" id="size">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="class">Klass: </label>
+                    <input type="text" id="class" name="class" value="Agility A-1">
+                </div>
+
                 <button type="submit">Lägg Till</button>
             </form>
         </article>
     </main>
 
+    <script>
+        // Sidebar functions
+        function openSidebar() {
+            document.getElementById("compSidebar").style.left = "0px";
+        }
+        function closeSidebar() {
+            document.getElementById("compSidebar").style.left = "-300px";
+        }
+        
+        // Show new dog form functions
+        function showNewDogForm() {
+            document.getElementById("newDogForm").style.display = "flex";
+            document.getElementById("newDogButton").style.display = "none";
+        }
+        function hideNewDogForm() {
+            document.getElementById("newDogForm").style.display = "none";
+            document.getElementById("newDogButton").style.display = "block";
+        }
+    </script>
+
     <!-- BOTTOM NAVIGATION -->
     <nav>
-        <div>
-            <button class="sizeButtons">Size 1</button>
-            <button class="sizeButtons">Size 2</button>
-            <button class="sizeButtons">Size 3</button>
+        <div id="sizes">
         </div>
-        <div>
-            <button class="classButtons">Klass A</button>
-            <button class="classButtons">Klass B</button>
-            <button class="classButtons">Klass C</button>
-            
+        <div id="classes">
         </div>
     </nav>
     <footer>
         <p>@Currysoft</p>
     </footer>
 </body>
+
 </html>
